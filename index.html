@@ -2,431 +2,128 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="/media/favicon.ico">
-    <title>Aspire Systems</title>
-    <style>
-        .mobile-menu {
-            display: block;
-        }
-
-        :root {
-            --red: crimson;
-            --green: #53BF9D;
-            --yellow: #FFC54D;
-            --white: whitesmoke;
-        }
-
-        body,
-        h2 {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .landing {
-            background-image: url(https://wallpaperaccess.com/full/1398313.jpg);
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            color: var(--white);
-        }
-
-        header a {
-            text-decoration: none;
-            color: var(--yellow);
-            min-width: 120px;
-        }
-
-        header {
-            display: flex;
-            flex-wrap: wrap;
-            row-gap: 1em;
-            padding: 1em;
-        }
-
-        #logo {
-            flex: 3;
-            font-size: 1.25em;
-            min-width: 260px;
-        }
-
-        nav {
-            flex: 2;
-            display: flex;
-            align-items: center;
-        }
-
-        nav a {
-            flex: 1;
-        }
-
-        nav a:hover {
-            color: var(--green);
-        }
-
-        header h2 i,
-        nav a i {
-            margin-right: .5em;
-        }
-
-
-        .maintext {
-            display: flex;
-            flex-direction: column;
-            height: 50vh;
-            justify-content: center;
-            padding: 2em;
-        }
-
-        .tagline1 {
-            color: var(--red);
-            font-size: 2.5em;
-            font-weight: bolder;
-        }
-
-        .tagline2 {
-            color: var(--yellow);
-        }
-
-        .maintext div {
-            margin-top: .75em;
-        }
-
-        .maintext button {
-            width: 20vw;
-            margin-top: 2em;
-            border-radius: 10px;
-            padding: .7em;
-            background-color: var(--green);
-            color: var(--white);
-            border: 1px solid var(--green);
-        }
-
-        .menu {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            background: linear-gradient(to right, rgb(100, 100, 100), rgb(53, 52, 52));
-            color: var(--white);
-        }
-
-        #menuheading,
-        #locheading {
-            background: linear-gradient(to right, rgb(100, 100, 100), rgb(53, 52, 52));
-            font-size: 2.5em;
-            color: var(--red);
-            display: flex;
-            justify-content: center;
-        }
-
-        .menu th {
-            color: var(--green);
-            font-size: 1.8em;
-        }
-
-        table {
-            width: 100%;
-            padding: 1em;
-        }
-
-        .menu tr {
-            display: flex;
-            justify-content: center;
-            margin-top: .8em;
-        }
-
-        .menu td:nth-child(1) {
-            flex: 1;
-            justify-self: left;
-        }
-
-
-        .menu td:nth-child(2) {
-            justify-self: right;
-        }
-
-        .maincourse {
-            grid-row: span 2;
-        }
-
-        .locations {
-            background: linear-gradient(to right, rgb(100, 100, 100), rgb(53, 52, 52));
-            color: var(--white);
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .locations h2 {
-            color: var(--green);
-            margin-bottom: .8em;
-        }
-
-        .locations div {
-            flex: 1;
-            padding: 1em;
-            min-width: 220px;
-        }
-
-        footer {
-            background-color: rgb(55, 55, 55);
-            color: var(--white);
-            padding: .25em 1em;
-        }
-
-        #copyright {
-            margin-left: 20px;
-        }
-
-        .social-menu ul {
-            display: flex;
-            padding: 0;
-        }
-
-        .social-menu ul li {
-            flex-wrap: wrap;
-            list-style: none;
-            display: inline-block;
-            margin: 0 15px;
-        }
-
-        .social-menu ul li .fab {
-            font-size: 25px;
-            line-height: 40px;
-            transition: .3s;
-            color: #000;
-        }
-
-        .social-menu ul li .fab:hover {
-            color: #fff;
-        }
-
-        .social-menu ul li a {
-            position: relative;
-            display: block;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #fff;
-            text-align: center;
-            transition: .6s;
-            box-shadow: 0 5px 4px rgba(0, 0, 0, .5);
-        }
-
-        .social-menu ul li a:hover {
-            transform: translate(0, -10%);
-        }
-
-
-        .social-menu ul li:nth-child(1) a:hover {
-            background-color: #4267B2;
-        }
-
-        .social-menu ul li:nth-child(2) a:hover {
-            background-color: #E4405F;
-        }
-
-        .social-menu ul li:nth-child(3) a:hover {
-            background-color: #00ACEE;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0px 30px;
-            background-color: #0000ff;
-            color: white;
-            height: 8vh;
-        }
-
-        nav .links {
-            display: flex;
-        }
-
-        .links p {
-            padding: 10px;
-        }
-
-        .links a {
-            color: #fff;
-        }
-
-        #mobile-menu-btn {
-            display: none;
-        }
-
-        .mobile-menu {
-            padding: 1%;
-            display: none;
-            background-color: #1177ca;
-            position: relative;
-            text-align: center;
-        }
-
-        .fa {
-            padding: 20px;
-            font-size: 30px;
-            text-align: center;
-            text-decoration: none;
-            margin: 5px 2px;
-            border-radius: 50%;
-        }
-
-        .fa:hover {
-            opacity: 0.7;
-        }
-
-        .fa-facebook {
-            background: #125688;
-            color: white;
-        }
-
-        .fa-linkedin {
-            background: #007bb5;
-            color: white;
-        }
-
-        @media (max-width: 600px) {
-            #mobile-menu-btn {
-                display: block;
-            }
-
-            nav p {
-                display: none;
-            }
-
-        }
-    </style>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
 </head>
 
 <body>
-    <div class="landing">
-        <!-- Large Screen Navigation Bar -->
-        <nav>
-            <div class="logo">
-                <h2>Aspire Systems</h2>
-            </div>
-            <div class="links">
-                <p><a href="#menuheading">Menu</a></p>
-                <p><a href="#locheading">Locations</a></p>
-                <p><a href="#social-handle">Social Media</a></p>
-                <strong id="mobile-menu-btn">Menu</strong>
-            </div>
-        </nav>
-        <!-- Small Screen Navigation Bar -->
-        <div class="mobile-menu">
-            <p><a href="#menuheading">Menu</a></p>
-            <p><a href="#locheading">Locations</a></p>
-            <p><a href="#social-handle">Social Media</a></p>
-        </div>
-        <script>
-            var mobileMenuBtn = document.querySelector("#mobile-menu-btn");
-            var mobileMenu = document.querySelector(".mobile-menu");
-            mobileMenuBtn.addEventListener("click", () => {
-                if (mobileMenu.style.display === "none") {
-                    mobileMenu.style.display = "block";
-                    mobileMenuBtn.innerHTML = "Close";
-                }
-                else {
-                    mobileMenu.style.display = "none";
-                    mobileMenuBtn.innerHTML = "Menu";
-                }
-            });
-        </script>
-        <div class="maintext">
-            <div class="tagline1">
-                Achieve Cutting-edge Modernization for Your Legacy Applications
-            </div>
-            <div class="tagline2">
-                Reimagine Your Critical Legacy Systems with our Application Modernization Services
-            </div>
-            <div class="callus">
-                Call us @+9144 6740 4000
-            </div>
-            <button>Order Online</button>
-        </div>
-    </div>
+   <h1>bouncing balls</h1>
+   <canvas></canvas>
 
-    <h2 id="menuheading">Menu</h2>
-    <div class="menu">
-        <div class="starters">
-            <table>
-                <th colspan="2">Solutions</th>
-                <tr>
-                    <td>Integration Accelerator</td>
-                </tr>
-                <tr>
-                    <td>Phygital retail</td>
-                </tr>
-                <tr>
-                    <td>Real Estate Mangemnet</td>
-                </tr>
-                <tr>
-                    <td>Saas Enablement</td>
-                </tr>
-                <tr>
-                    <td>Mobile Erp</td>
-                </tr>
-            </table>
-        </div>
-        <div class="maincourse">
-            <table>
-                <th colspan="2">Services</th>
-                <tr>
-                    <td>Software Engineering</td>
-                </tr>
-                <tr>
-                    <td>Cloud Tranformation</td>
-                </tr>
-                <tr>
-                    <td>Managed Testing Services</td>
-                </tr>
-                <tr>
-                    <td>Independent Software Testing Services</td>
-                </tr>
-            </table>
-        </div>
-    </div>
-    <h2 id="locheading">Locations</h2>
-    <div class="locations">
-        <div class="Sipcot">
-            <h2>
-                1/D-1, SIPCOT IT PARK</h2>
-            <address>
-                Siruseri, Chennai - 603 103</br>
-                Tamil Nadu, India </br>
-                Tele: + 91 44 6740 4000</br>
-            </address>
-        </div>
-        <div class="SandhyaInfocity">
-            <h2>Sandhya Infocity, Block 2,</h2>
-            <address>
-                No: 33, Rajiv Gandhi Salai, OMR,</br>
-                Navalur, Chennai - 600130.</br>
-            </address>
-        </div>
-        <div class="RegisterOffice">
-            <h2>Registered office </h2>
-            <address>
-                Old No.4, New No.7</br>
-                II Trust Link Road,</br>
-                Mandaveli, Chennai- 600 028
-            </address>
-        </div>
-    </div>
-    <footer>
-        <h2>On Social Media</h2>
-        <div class="social-handle">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-        </div>
-        <div id="copyright">&#169 Aspire Systems</div>
-        </div>
-    </footer>
+   <script src="main-finished.js"></script>
+
+   <script>
+      // set up canvas
+
+      const canvas = document.querySelector('canvas');
+      const ctx = canvas.getContext('2d');
+
+      const width = canvas.width = window.innerWidth;
+      const height = canvas.height = window.innerHeight;
+
+      // function to generate random number
+
+      function random(min, max) {
+         return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      // function to generate random RGB color value
+
+      function randomRGB() {
+         return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
+      }
+
+      class Ball {
+
+         constructor(x, y, velX, velY, color, size) {
+            this.x = x;
+            this.y = y;
+            this.velX = velX;
+            this.velY = velY;
+            this.color = color;
+            this.size = size;
+         }
+
+         draw() {
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+            ctx.fill();
+         }
+
+         update() {
+            if ((this.x + this.size) >= width) {
+               this.velX = -(Math.abs(this.velX));
+            }
+
+            if ((this.x - this.size) <= 0) {
+               this.velX = Math.abs(this.velX);
+            }
+
+            if ((this.y + this.size) >= height) {
+               this.velY = -(Math.abs(this.velY));
+            }
+
+            if ((this.y - this.size) <= 0) {
+               this.velY = Math.abs(this.velY);
+            }
+
+            this.x += this.velX;
+            this.y += this.velY;
+         }
+
+         collisionDetect() {
+            for (const ball of balls) {
+               if (!(this === ball)) {
+                  const dx = this.x - ball.x;
+                  const dy = this.y - ball.y;
+                  const distance = Math.sqrt(dx * dx + dy * dy);
+
+                  if (distance < this.size + ball.size) {
+                     ball.color = this.color = randomRGB();
+                  }
+               }
+            }
+         }
+
+      }
+
+      const balls = [];
+
+      while (balls.length < 25) {
+         const size = random(10, 20);
+         const ball = new Ball(
+            // ball position always drawn at least one ball width
+            // away from the edge of the canvas, to avoid drawing errors
+            random(0 + size, width - size),
+            random(0 + size, height - size),
+            random(-7, 7),
+            random(-7, 7),
+            randomRGB(),
+            size
+         );
+
+         balls.push(ball);
+      }
+
+      function loop() {
+         ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+         ctx.fillRect(0, 0, width, height);
+
+         for (const ball of balls) {
+            ball.draw();
+            ball.update();
+            ball.collisionDetect();
+         }
+
+         requestAnimationFrame(loop);
+      }
+
+      loop();
+
+   </script>
 </body>
 
 </html>
