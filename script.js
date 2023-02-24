@@ -16,7 +16,15 @@ function Hider() {
 
 function LoginCred() {
     var Logemail = document.getElementById('LogMail').value;
+    if(Logemail.length == 0) {
+        alert("please Enter You Credentials Fully");
+        return;
+    }
     var LogPassCode = document.getElementById('LogPassword').value;
+    if(LogPassCode.length == 0) {
+        alert("please Enter You Credentials Fully");
+        return;
+    }
     if (localStorage.getItem(Logemail) != LogPassCode) {
         alert("Incorrect PassWord");
         return;
@@ -38,12 +46,20 @@ function Register() {
         return;
     }
     var email = document.getElementById('Email').value;
+    if(localStorage.getItem(email) !== null) {
+        alert("user Already Exist");
+        return;
+    }
     if (email.includes('@') < 1 || email.includes('.') < 1) {
         alert("Email is invalid");
         return;
     }
     var ConfrmPassCode = document.getElementById('CnfrmPass').value;
+    if(PassCode != ConfrmPassCode) {
+        alert("Password Doesnot Match");
+        return;
+    }
     populateStorage(email, PassCode);
-    alert(localStorage.getItem(email) + " " + email);
+    alert("You have Successfully Registered With " + email);
 
 }
