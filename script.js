@@ -25,6 +25,10 @@ function LoginCred() {
         alert("please Enter You Credentials Fully");
         return;
     }
+    if (localStorage.getItem(Logemail) === null) {
+        alert("User Not Found");
+        return;
+    }
     if (localStorage.getItem(Logemail) != LogPassCode) {
         alert("Incorrect PassWord");
         return;
