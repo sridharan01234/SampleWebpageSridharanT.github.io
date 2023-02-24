@@ -1,0 +1,138 @@
+body {
+    color: #ffffff;
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: #003049 !important;
+    height: 100vh !important;
+}
+
+#RegPage {
+    height: 100vh !important;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+#LoginPage {
+    height: 100vh !important;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+}
+
+form {
+    box-shadow: 0 0 90px 0 rgba(55, 226, 127, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    padding: 3%;
+    border-radius: 20%;
+    background-color: 003049;
+}
+
+.container {
+    position: absolute;
+    top: 10%;
+}
+
+.LogButton {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 80% 50% 80% 50%;
+    border: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 10px;
+    background-color: #6056ba;
+    padding: 15px 50px;
+    margin: 0 auto;
+}
+
+.LogButton span {
+    position: relative;
+    z-index: 1;
+}
+
+.LogButton:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 470%;
+    width: 140%;
+    background: #182554;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: translateX(-100%) translateY(-25%) rotate(45deg);
+    transform: translateX(-100%) translateY(-25%) rotate(45deg);
+}
+
+.LogButton:hover:after {
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+#MyButton {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 80% 50% 80% 50%;
+    border: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 10px;
+    background-color: #6056ba;
+    padding: 15px 50px;
+    margin: 0 auto;
+}
+
+#MyButton span {
+    position: relative;
+    z-index: 1;
+}
+
+#MyButton:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 470%;
+    width: 140%;
+    background: #182554;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: translateX(-100%) translateY(-25%) rotate(45deg);
+    transform: translateX(-100%) translateY(-25%) rotate(45deg);
+}
+
+#MyButton:hover:after {
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+#Cnfrm {
+    padding: 2%;
+    height: 2%;
+    width: 2%;
+}
+
+#Regform {
+    border-radius: 20%;
+    box-shadow: 0 0 90px 0 rgba(55, 226, 127, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    padding: 5%;
+    justify-items: center;
+    align-items: baseline;
+}
