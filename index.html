@@ -2,128 +2,50 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sridharan Webpage</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-   <h1>bouncing balls</h1>
-   <canvas></canvas>
+    <div id="LoginPage">
+        <h1 id="heading">Please Enter Your Credentials</h1>
+        <form>
+            <label for="UserName">UserName</label>
+            <input type="text" id="LogMail" name="fname"><br><br>
+            <label for="password">PassWord</label>
+            <input type="password" id="LogPassword" name="lname"><br><br>
+            <button type="LoginButton" class="LogButton" onclick="LoginCred()">
+                <span>Login</span>
+            </button>
+            <br>
+            If You are new User <a onclick="Hider()" href="#">Click Here</a>
+        </form>
+    </div>
+    <div id="RegPage">
+        <h1 id="heading">Signup Here</h1>
+        <form id="Regform">
+            <label for="UserName">FirstName</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" minlength="8" id="fname" name="fname"><br><br>
+            <label for="LastName">LastName</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" minlength="1" id="lname" name="fname"><br><br>
+            <label for="E-Mail">Email</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="Email" name="Email"><br><br>
+            <label for="password">PassWord</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="password" minlength="8" maxlength="16" id="password" name="lname"><br><br>
+            <label for="password">Confirm PassWord</label>
+            <input type="password" minlength="8" maxlength="16" id="CnfrmPass" name="lname"><br><br>
+            <button type="button" id="MyButton" onclick="Register()">
+                <span>Submit</span>
+            </button>
+            <br>
+            If You are Existing User <a onclick="Hider()" href="#">Click Here</a>
+        </form>
+    </div>
 
-   <script src="main-finished.js"></script>
-
-   <script>
-      // set up canvas
-
-      const canvas = document.querySelector('canvas');
-      const ctx = canvas.getContext('2d');
-
-      const width = canvas.width = window.innerWidth;
-      const height = canvas.height = window.innerHeight;
-
-      // function to generate random number
-
-      function random(min, max) {
-         return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
-
-      // function to generate random RGB color value
-
-      function randomRGB() {
-         return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
-      }
-
-      class Ball {
-
-         constructor(x, y, velX, velY, color, size) {
-            this.x = x;
-            this.y = y;
-            this.velX = velX;
-            this.velY = velY;
-            this.color = color;
-            this.size = size;
-         }
-
-         draw() {
-            ctx.beginPath();
-            ctx.fillStyle = this.color;
-            ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-            ctx.fill();
-         }
-
-         update() {
-            if ((this.x + this.size) >= width) {
-               this.velX = -(Math.abs(this.velX));
-            }
-
-            if ((this.x - this.size) <= 0) {
-               this.velX = Math.abs(this.velX);
-            }
-
-            if ((this.y + this.size) >= height) {
-               this.velY = -(Math.abs(this.velY));
-            }
-
-            if ((this.y - this.size) <= 0) {
-               this.velY = Math.abs(this.velY);
-            }
-
-            this.x += this.velX;
-            this.y += this.velY;
-         }
-
-         collisionDetect() {
-            for (const ball of balls) {
-               if (!(this === ball)) {
-                  const dx = this.x - ball.x;
-                  const dy = this.y - ball.y;
-                  const distance = Math.sqrt(dx * dx + dy * dy);
-
-                  if (distance < this.size + ball.size) {
-                     ball.color = this.color = randomRGB();
-                  }
-               }
-            }
-         }
-
-      }
-
-      const balls = [];
-
-      while (balls.length < 25) {
-         const size = random(10, 20);
-         const ball = new Ball(
-            // ball position always drawn at least one ball width
-            // away from the edge of the canvas, to avoid drawing errors
-            random(0 + size, width - size),
-            random(0 + size, height - size),
-            random(-7, 7),
-            random(-7, 7),
-            randomRGB(),
-            size
-         );
-
-         balls.push(ball);
-      }
-
-      function loop() {
-         ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
-         ctx.fillRect(0, 0, width, height);
-
-         for (const ball of balls) {
-            ball.draw();
-            ball.update();
-            ball.collisionDetect();
-         }
-
-         requestAnimationFrame(loop);
-      }
-
-      loop();
-
-   </script>
 </body>
 
 </html>
