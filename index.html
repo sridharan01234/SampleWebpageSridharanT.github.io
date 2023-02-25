@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Sridharan Webpage</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="LoginPage">
         <h1 id="heading">Please Enter Your Credentials</h1>
-        <form>
+        <form id="Logform">
             <label for="UserName">UserName</label>
             <input type="text" id="LogMail" name="fname"><br><br>
             <label for="password">PassWord</label>
@@ -45,7 +47,135 @@
             If You are Existing User <a onclick="Hider()" href="#">Click Here</a>
         </form>
     </div>
+    <div id="ActualPage">
+        <div class="landing">
+            <!-- Large Screen Navigation Bar -->
+            <nav>
+                <div class="logo">
+                    <h2>Aspire Systems</h2>
+                </div>
+                <div class="links">
+                    <p><a href="#menuheading">Menu</a></p>
+                    <p><a href="#locheading">Locations</a></p>
+                    <p><a href="#social-handle">Social Media</a></p>
+                    <strong id="mobile-menu-btn">Menu</strong>
+                    <div>
+                        <p id="FirstAct"></p>
+                    </div>
+                </div>
+            </nav>
+            <!-- Small Screen Navigation Bar -->
+            <div class="mobile-menu">
+                <p><a href="#menuheading">Menu</a></p>
+                <p><a href="#locheading">Locations</a></p>
+                <p><a href="#social-handle">Social Media</a></p>
+            </div>
+            <script>
+                var mobileMenuBtn = document.querySelector("#mobile-menu-btn");
+                var mobileMenu = document.querySelector(".mobile-menu");
+                mobileMenuBtn.addEventListener("click", () => {
+                    if (mobileMenu.style.display === "none") {
+                        mobileMenu.style.display = "block";
+                        mobileMenuBtn.innerHTML = "Close";
+                    }
+                    else {
+                        mobileMenu.style.display = "none";
+                        mobileMenuBtn.innerHTML = "Menu";
+                    }
+                });
+            </script>
+            <div class="maintext">
+                <div class="tagline1">
+                    Achieve Cutting-edge Modernization for Your Legacy Applications
+                </div>
+                <div class="tagline2">
+                    Reimagine Your Critical Legacy Systems with our Application Modernization Services
+                </div>
+                <div class="callus">
+                    Call us @+9144 6740 4000
+                </div>
 
+            </div>
+        </div>
+
+        <h2 id="menuheading">Menu</h2>
+        <div class="menu">
+            <div class="starters">
+                <table>
+                    <th colspan="2">Solutions</th>
+                    <tr>
+                        <td>Integration Accelerator</td>
+                    </tr>
+                    <tr>
+                        <td>Phygital retail</td>
+                    </tr>
+                    <tr>
+                        <td>Real Estate Mangemnet</td>
+                    </tr>
+                    <tr>
+                        <td>Saas Enablement</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile Erp</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="maincourse">
+                <table>
+                    <th colspan="2">Services</th>
+                    <tr>
+                        <td>Software Engineering</td>
+                    </tr>
+                    <tr>
+                        <td>Cloud Tranformation</td>
+                    </tr>
+                    <tr>
+                        <td>Managed Testing Services</td>
+                    </tr>
+                    <tr>
+                        <td>Independent Software Testing Services</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <h2 id="locheading">Locations</h2>
+        <div class="locations">
+            <div class="Sipcot">
+                <h2>
+                    1/D-1, SIPCOT IT PARK</h2>
+                <address>
+                    Siruseri, Chennai - 603 103</br>
+                    Tamil Nadu, India </br>
+                    Tele: + 91 44 6740 4000</br>
+                </address>
+            </div>
+            <div class="SandhyaInfocity">
+                <h2>Sandhya Infocity, Block 2,</h2>
+                <address>
+                    No: 33, Rajiv Gandhi Salai, OMR,</br>
+                    Navalur, Chennai - 600130.</br>
+                </address>
+            </div>
+            <div class="RegisterOffice">
+                <h2>Registered office </h2>
+                <address>
+                    Old No.4, New No.7</br>
+                    II Trust Link Road,</br>
+                    Mandaveli, Chennai- 600 028
+                </address>
+            </div>
+        </div>
+        <footer>
+            <h2>On Social Media</h2>
+            <div class="social-handle">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <div id="copyright">&#169 Aspire Systems</div>
+    </div>
+    </footer>
+    </div>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

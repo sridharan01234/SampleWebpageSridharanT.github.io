@@ -1,10 +1,13 @@
-function populateStorage(email, password) {
-    localStorage.setItem(email, password);
-}
+var LogHider = document.getElementById('LoginPage');
+LogHider.style.display = "flex"
+var RegHider = document.getElementById('RegPage');
+var ActualPage = document.getElementById('ActualPage');
+ActualPage.style.display = "none";
+var FirstNameAct;
+var LastNameAct;
 function Hider() {
-    const LogHider = document.getElementById('LoginPage');
-    const RegHider = document.getElementById('RegPage');
     if (LogHider.style.display === "flex") {
+        ActualPage.style.display
         RegHider.style.display = "flex";
         LogHider.style.display = "none";
         return;
@@ -14,28 +17,38 @@ function Hider() {
 
 }
 
+
 function LoginCred() {
     var Logemail = document.getElementById('LogMail').value;
-    if(Logemail.length == 0) {
+    if (Logemail.length == 0) {
         alert("please Enter You Credentials Fully");
         return;
     }
     var LogPassCode = document.getElementById('LogPassword').value;
-    if(LogPassCode.length == 0) {
+    if (LogPassCode.length == 0) {
         alert("please Enter You Credentials Fully");
         return;
     }
-    if (localStorage.getItem(Logemail) === null) {
+    if (localStorage.getItem(Logemail) == null) {
         alert("User Not Found");
         return;
     }
-    if (localStorage.getItem(Logemail) != LogPassCode) {
-        alert("Incorrect PassWord");
+    
+    if (JSON.parse(localStorage.getItem(Logemail)).password !== LogPassCode) {
+        alert("Incorrect Password");
         return;
     }
-    alert("Login Success");
-
+    console.log("success");
+    FirstNameAct =  JSON.parse(localStorage.getItem(Logemail)).username.fname;
+    LastNameAct =  JSON.parse(localStorage.getItem(Logemail)).username.lname;
+    document.getElementById('FirstAct').innerHTML = FirstNameAct +" "+ LastNameAct;
+    Logge();
 }
+
+function Logge() {
+        ActualPage.style.display = "block";
+        LogHider.style.display = "none";
+} 
 
 function Register() {
     var FirstName = document.getElementById('fname').value;
@@ -50,7 +63,7 @@ function Register() {
         return;
     }
     var email = document.getElementById('Email').value;
-    if(localStorage.getItem(email) !== null) {
+    if (localStorage.getItem(email) !== null) {
         alert("user Already Exist");
         return;
     }
@@ -59,11 +72,16 @@ function Register() {
         return;
     }
     var ConfrmPassCode = document.getElementById('CnfrmPass').value;
-    if(PassCode != ConfrmPassCode) {
+    if (PassCode != ConfrmPassCode) {
         alert("Password Doesnot Match");
         return;
     }
-    populateStorage(email, PassCode);
-    alert("You have Successfully Registered With " + email);
+    var variable = JSON.stringify({
+        username: {
+            fname: FirstName,
+            lname: LastName
+        }, email: email, password: PassCode
+    });
+    localStorage.setItem(email, variable);
 
 }
