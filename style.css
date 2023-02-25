@@ -5,6 +5,27 @@ body {
     height: 100vh !important;
 }
 
+.links a {
+    font-size: small;
+    display: block;
+    width: 150px;
+    height: 30px;
+    background: #4285f4 !important;
+    padding: 10px;
+    text-align:justify;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 20px;
+    text-decoration: none
+}
+
+#UserName p
+{
+    padding: 0px;
+    display: block;
+}
+
 .mobile-menu {
     display: block;
 }

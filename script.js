@@ -41,7 +41,8 @@ function LoginCred() {
     console.log("success");
     FirstNameAct =  JSON.parse(localStorage.getItem(Logemail)).username.fname;
     LastNameAct =  JSON.parse(localStorage.getItem(Logemail)).username.lname;
-    document.getElementById('FirstAct').innerHTML = FirstNameAct +" "+ LastNameAct;
+    document.getElementById('FirstAct').innerHTML = FirstNameAct ;
+    document.getElementById('LastAct').innerHTML = LastNameAct;
     Logge();
 }
 
