@@ -49,6 +49,7 @@ function LoginCred() {
 function Logge() {
         ActualPage.style.display = "block";
         LogHider.style.display = "none";
+        document.querySelector('html').style.backgroundColor = "#0000ff";
 } 
 
 function Register() {
@@ -83,6 +84,7 @@ function Register() {
             lname: LastName
         }, email: email, password: PassCode
     });
+    alert(`SuccessFully Registered with ${email}`);
     localStorage.setItem(email, variable);
-
+    
 }
