@@ -1,182 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Sridharan Webpage</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+    <link rel="stylesheet" href="formstyle.css">
 </head>
-
 <body>
-    <div id="LoginPage">
-        <h1 id="heading">Please Enter Your Credentials</h1>
-        <form id="Logform">
-            <label for="UserName">UserName</label>
-            <input type="text" id="LogMail" name="fname"><br><br>
-            <label for="password">PassWord</label>
-            <input type="password" id="LogPassword" name="lname"><br><br>
-            <button type="LoginButton" class="LogButton" onclick="LoginCred()">
-                <span>Login</span>
-            </button>
-            <br>
-            If You are new User <a onclick="Hider()" href="#">Click Here</a>
-        </form>
-    </div>
-    <div id="RegPage">
-        <h1 id="heading">Signup Here</h1>
-        <form id="Regform">
-            <label for="UserName">FirstName</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" minlength="8" id="fname" name="fname"><br><br>
-            <label for="LastName">LastName</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" minlength="1" id="lname" name="fname"><br><br>
-            <label for="E-Mail">Email</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" id="Email" name="Email"><br><br>
-            <label for="password">PassWord</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="password" minlength="8" maxlength="16" id="password" name="lname"><br><br>
-            <label for="password">Confirm PassWord</label>
-            <input type="password" minlength="8" maxlength="16" id="CnfrmPass" name="lname"><br><br>
-            <button type="button" id="MyButton" onclick="Register()">
-                <span>Submit</span>
-            </button>
-            <br>
-            If You are Existing User <a onclick="Hider()" href="#">Click Here</a>
-        </form>
-    </div>
-    <div id="ActualPage">
-        <div class="landing">
-            <!-- Large Screen Navigation Bar -->
-            <nav>
-                <div class="logo">
-                    <h2>Aspire Systems</h2>
-                </div>
-                <div class="links">
-                    <p><a href="#menuheading">Menu</a></p>
-                    <p><a href="#locheading">Locations</a></p>
-                    <p><a href="#SocialHandles">Social Media</a></p>
-                    <strong id="mobile-menu-btn">Menu</strong>
-                </div>
-                <div id="UserName">
-                    <p id="FirstAct"></p>
-                    <p id="LastAct"></p>
-                </div>
-            </nav>
-            <!-- Small Screen Navigation Bar -->
-            <div class="mobile-menu">
-                <p><a href="#menuheading">Menu</a></p>
-                <p><a href="#locheading">Locations</a></p>
-                <p><a href="#SocialHandles">Social Media</a></p>
-            </div>
-            <script>
-                var mobileMenuBtn = document.querySelector("#mobile-menu-btn");
-                var mobileMenu = document.querySelector(".mobile-menu");
-                mobileMenuBtn.addEventListener("click", () => {
-                    if (mobileMenu.style.display === "none") {
-                        mobileMenu.style.display = "block";
-                        mobileMenuBtn.innerHTML = "Close";
-                    }
-                    else {
-                        mobileMenu.style.display = "none";
-                        mobileMenuBtn.innerHTML = "Menu";
-                    }
-                });
-            </script>
-            <div class="maintext">
-                <div class="tagline1">
-                    Achieve Cutting-edge Modernization for Your Legacy Applications
-                </div>
-                <div class="tagline2">
-                    Reimagine Your Critical Legacy Systems with our Application Modernization Services
-                </div>
-                <div class="callus">
-                    Call us @+9144 6740 4000
-                </div>
-
-            </div>
-        </div>
-
-        <h2 id="menuheading">Menu</h2>
-        <div class="menu">
-            <div class="starters">
-                <table>
-                    <th colspan="2">Solutions</th>
-                    <tr>
-                        <td>Integration Accelerator</td>
-                    </tr>
-                    <tr>
-                        <td>Phygital retail</td>
-                    </tr>
-                    <tr>
-                        <td>Real Estate Mangemnet</td>
-                    </tr>
-                    <tr>
-                        <td>Saas Enablement</td>
-                    </tr>
-                    <tr>
-                        <td>Mobile Erp</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="maincourse">
-                <table>
-                    <th colspan="2">Services</th>
-                    <tr>
-                        <td>Software Engineering</td>
-                    </tr>
-                    <tr>
-                        <td>Cloud Tranformation</td>
-                    </tr>
-                    <tr>
-                        <td>Managed Testing Services</td>
-                    </tr>
-                    <tr>
-                        <td>Independent Software Testing Services</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <h2 id="locheading">Locations</h2>
-        <div class="locations">
-            <div class="Sipcot">
-                <h2>
-                    1/D-1, SIPCOT IT PARK</h2>
-                <address>
-                    Siruseri, Chennai - 603 103</br>
-                    Tamil Nadu, India </br>
-                    Tele: + 91 44 6740 4000</br>
-                </address>
-            </div>
-            <div class="SandhyaInfocity">
-                <h2>Sandhya Infocity, Block 2,</h2>
-                <address>
-                    No: 33, Rajiv Gandhi Salai, OMR,</br>
-                    Navalur, Chennai - 600130.</br>
-                </address>
-            </div>
-            <div class="RegisterOffice">
-                <h2>Registered office </h2>
-                <address>
-                    Old No.4, New No.7</br>
-                    II Trust Link Road,</br>
-                    Mandaveli, Chennai- 600 028
-                </address>
-            </div>
-        </div>
-        <footer>
-            <h2 id="SocialHandles">On Social Media</h2>
-            <div class="social-handle">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-            </div>
-            <div id="copyright">&#169 Aspire Systems</div>
-    </div>
-    </footer>
-    </div>
-    <script src="script.js" defer></script>
+    <input id="rotated" type="checkbox" name="rotated" checked><label for="rotated">Rotate the form</label>
+<form>
+	<h3 data-text="Choose Your Language">Choose Your Language</h3>
+	<label data-text="JavaScript">
+		<input type="radio" name="language" value="js"> JavaScript
+		<span class="dot"></span>
+		<span class="dot-shadow"></span>
+	</label>
+	<label data-text="PHP">
+		<input type="radio" name="language" value="php"> PHP
+		<span class="dot"></span>
+		<span class="dot-shadow"></span>
+	</label>
+	<label data-text="Python">
+		<input type="radio" name="language" value="py"> Python
+		<span class="dot"></span>
+		<span class="dot-shadow"></span>
+	</label>
+	<label data-text="Swift">
+		<input type="radio" name="language" value="swift"> Swift
+		<span class="dot"></span>
+		<span class="dot-shadow"></span>
+	</label>
+</form>
 </body>
-
 </html>
